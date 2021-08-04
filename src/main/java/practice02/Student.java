@@ -12,4 +12,7 @@ public class Student extends Person{
         return klass;
     }
 
+    public String introduce(){
+        return "I am a Student. I am at Class " + klass +".";
+    }
 }
