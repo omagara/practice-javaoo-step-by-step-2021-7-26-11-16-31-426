@@ -9,6 +9,7 @@ public class Klass {
     private Student leader;
     private String displayName;
     private List<Student> members = new ArrayList<>();
+
     public Klass(int number) {
         this.number = number;
     }
@@ -30,6 +31,17 @@ public class Klass {
     public Student getLeader() {
         return leader;
     }
+
+    @Override
+    public String toString() {
+        return "Klass{" +
+                "number=" + number +
+                ", leader=" + leader +
+                ", displayName='" + displayName + '\'' +
+                ", members=" + members +
+                '}';
+    }
+
     public void appendMember(Student student){
         members.add(student);
     }
