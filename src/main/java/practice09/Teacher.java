@@ -35,11 +35,17 @@ public class Teacher extends Person {
             return "My name is " + getName() + ". I am " + getAge() + " years old. I am a Teacher. I teach No Class.";
         }
     }
-    public boolean isTeaching (Student student){
+
+    public boolean isTeaching(Student student) {
         return linkedList.contains(student.getKlass());
     }
-    public String introduceWith(Student studentName) {
-//        if (linkedList.contains(studentName.getKlass().getNumber())) {
-            return "My name is " + getName() + ". I am " + getAge() + " years old. I am a Teacher. I teach " + studentName.getName() + ".";
+
+    public String introduceWith(Student student) {
+        if (isTeaching(student)) {
+            return "My name is " + getName() + ". I am " + getAge() + " years old. I am a Teacher. I teach " + student.getName() + ".";
+        } else {
+
+            return "My name is " + getName() + ". I am " + getAge() + " years old. I am a Teacher. I don't teach " + student.getName() + ".";
         }
+    }
 }
