@@ -35,4 +35,7 @@ public class Teacher extends Person {
             return "My name is " + getName() + ". I am " + getAge() + " years old. I am a Teacher. I teach No Class.";
         }
     }
+    public boolean isTeaching (Student student){
+        return linkedList.contains(student.getKlass());
+    }
 }
