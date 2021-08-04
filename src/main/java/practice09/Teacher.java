@@ -38,4 +38,8 @@ public class Teacher extends Person {
     public boolean isTeaching (Student student){
         return linkedList.contains(student.getKlass());
     }
+    public String introduceWith(Student studentName) {
+//        if (linkedList.contains(studentName.getKlass().getNumber())) {
+            return "My name is " + getName() + ". I am " + getAge() + " years old. I am a Teacher. I teach " + studentName.getName() + ".";
+        }
 }
