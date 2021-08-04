@@ -1,5 +1,7 @@
 package practice07;
 
+import practice06.Student;
+
 public class Teacher extends Person{
     private practice07.Klass klass;
 
@@ -20,6 +22,14 @@ public class Teacher extends Person{
             return "My name is " + getName() + ". I am " + getAge() + " years old. I am a Teacher. I teach " + klass.getDisplayName() + ".";
         } else {
             return "My name is " + getName() + ". I am " + getAge() + " years old. I am a Teacher. I teach No Class.";
+        }
+    }
+
+    public String introduceWith(practice07.Student studentName) {
+        if (studentName.getKlass().getNumber()!=getKlass().getNumber()) {
+            return "My name is " + getName() + ". I am " + getAge() + " years old. I am a Teacher. I don't teach " + studentName.getName() + ".";
+        }else {
+            return "My name is " + getName() + ". I am " + getAge() + " years old. I am a Teacher. I teach " + studentName.getName() + ".";
         }
     }
 }
