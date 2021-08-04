@@ -15,16 +15,24 @@ public class Teacher extends Person {
         this.linkedList = linkedList;
     }
 
+    public Teacher(int id, String name, int age) {
+        super(id, name, age);
+    }
+
     public LinkedList<Klass> getClasses() {
         return this.linkedList = linkedList;
     }
 
     public String introduce() {
-        List <String> classes = new ArrayList<>();
-        for (Klass cList:linkedList){
-            classes.add(String.valueOf(cList.getNumber()));
+        if (linkedList != null) {
+            List<String> classes = new ArrayList<>();
+            for (Klass cList : linkedList) {
+                classes.add(String.valueOf(cList.getNumber()));
+            }
+            String classList = String.join(", ", classes);
+            return "My name is " + getName() + ". I am " + getAge() + " years old. I am a Teacher. I teach Class " + classList + ".";
+        } else {
+            return "My name is " + getName() + ". I am " + getAge() + " years old. I am a Teacher. I teach No Class.";
         }
-        String classList = String.join(", ",classes);
-        return "My name is " + getName() + ". I am " + getAge() + " years old. I am a Teacher. I teach Class " + classList + ".";
     }
 }
