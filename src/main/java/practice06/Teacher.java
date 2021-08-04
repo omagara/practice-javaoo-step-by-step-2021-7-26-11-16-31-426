@@ -19,12 +19,16 @@ public class Teacher extends Person {
     public String introduce() {
         if (klass != null) {
             return "My name is " + getName() + ". I am " + getAge() + " years old. I am a Teacher. I teach " + klass.getDisplayName() + ".";
-        }else {
+        } else {
             return "My name is " + getName() + ". I am " + getAge() + " years old. I am a Teacher. I teach No Class.";
         }
     }
 
-    public String introduceWith(Student studentName){
-        return "My name is " + getName() + ". I am " + getAge() + " years old. I am a Teacher. I teach " + studentName.getName() + ".";
+    public String introduceWith(Student studentName) {
+        if (studentName.getKlass().equals(getKlass())) {
+            return "My name is " + getName() + ". I am " + getAge() + " years old. I am a Teacher. I teach " + studentName.getName() + ".";
+        }else {
+            return "My name is " + getName() + ". I am " + getAge() + " years old. I am a Teacher. I don't teach " + studentName.getName() + ".";
+        }
     }
 }
