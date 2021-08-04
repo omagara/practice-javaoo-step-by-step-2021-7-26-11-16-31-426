@@ -2,12 +2,18 @@ package practice06;
 
 public class Klass {
     private int number;
-
-    public int getNumber() {
-        return number;
-    }
+    private String displayName;
 
     public Klass(int number) {
         this.number = number;
+    }
+
+    public String getDisplayName() {
+        displayName = "Class " + number;
+        return displayName;
+    }
+
+    public int getNumber() {
+        return number;
     }
 }
