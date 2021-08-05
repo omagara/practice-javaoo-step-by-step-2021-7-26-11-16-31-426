@@ -45,4 +45,5 @@ public class Klass {
     public void appendMember(Student student){
         members.add(student);
     }
+
 }
