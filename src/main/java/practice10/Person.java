@@ -28,5 +28,7 @@ public class Person {
         Person person = (Person) o;
         return id == person.id && age == person.age && Objects.equals(name, person.name);
     }
-
+    public String introduce(){
+        return "My name is " + name +". I am " + age + " years old.";
+    }
 }
