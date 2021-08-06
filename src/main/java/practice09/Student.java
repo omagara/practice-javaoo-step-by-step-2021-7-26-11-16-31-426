@@ -11,7 +11,7 @@ public class Student extends Person {
     public Klass getKlass() {
         return klass;
     }
-    public void seKlass (Klass klass){
+    public void setKlass (Klass klass){
         this.klass = klass;
     }
     public String introduce() {
