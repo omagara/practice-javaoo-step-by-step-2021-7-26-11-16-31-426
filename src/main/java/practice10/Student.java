@@ -16,6 +16,10 @@ public class Student extends Person{
     }
 
     public String introduce(){
-        return "My name is " + getName() + ". I am " + getAge() + " years old. I am a Student. I am at " + klass.getDisplayName() + ".";
+        if (klass.getLeader() == null) {
+            return "My name is " + getName() + ". I am " + getAge() + " years old. I am a Student. I am at " + klass.getDisplayName() + ".";
+        } else {
+            return "My name is " + getName() + ". I am " + getAge() + " years old. I am a Student. I am Leader of " + klass.getDisplayName() + ".";
+        }
     }
 }
