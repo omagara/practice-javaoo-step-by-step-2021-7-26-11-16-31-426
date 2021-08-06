@@ -11,9 +11,11 @@ public class Student extends Person {
     public Klass getKlass() {
         return klass;
     }
-    public void setKlass (Klass klass){
+
+    public void setKlass(Klass klass) {
         this.klass = klass;
     }
+
     public String introduce() {
         if (klass.getLeader() == null) {
             return "My name is " + getName() + ". I am " + getAge() + " years old. I am a Student. I am at " + klass.getDisplayName() + ".";

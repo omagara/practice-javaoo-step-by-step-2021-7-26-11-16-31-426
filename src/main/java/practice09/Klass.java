@@ -1,8 +1,5 @@
 package practice09;
 
-
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 public class Klass {
@@ -22,23 +19,24 @@ public class Klass {
         return number;
     }
 
-    public void assignLeader(Student leader){
-        if (leader.getKlass().getNumber() == this.number){
-            this.leader=leader;
-        }else {
+    public void assignLeader(Student leader) {
+        if (leader.getKlass().getNumber() == this.number) {
+            this.leader = leader;
+        } else {
             System.out.print("It is not one of us.\n");
         }
     }
+
     public Student getLeader() {
         return leader;
     }
 
 
-    public void appendMember(Student member){
+    public void appendMember(Student member) {
         member.setKlass(this);
     }
 
-    public boolean isIn(Student student){
+    public boolean isIn(Student student) {
         return this.equals(student.getKlass());
     }
 
