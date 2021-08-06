@@ -4,15 +4,14 @@ package practice09;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Teacher extends Person {
-    private LinkedList<Klass> linkedList;
+    private LinkedList<Klass> klasses;
 
 
-    public Teacher(int id, String name, int age, LinkedList<Klass> linkedList) {
+    public Teacher(int id, String name, int age, LinkedList<Klass> klasses) {
         super(id, name, age);
-        this.linkedList = linkedList;
+        this.klasses = klasses;
     }
 
     public Teacher(int id, String name, int age) {
@@ -20,13 +19,13 @@ public class Teacher extends Person {
     }
 
     public LinkedList<Klass> getClasses() {
-        return this.linkedList = linkedList;
+        return this.klasses = klasses;
     }
 
     public String introduce() {
-        if (linkedList != null) {
+        if (klasses != null) {
             List<String> classes = new ArrayList<>();
-            for (Klass cList : linkedList) {
+            for (Klass cList : klasses) {
                 classes.add(String.valueOf(cList.getNumber()));
             }
             String classList = String.join(", ", classes);
@@ -37,7 +36,7 @@ public class Teacher extends Person {
     }
 
     public boolean isTeaching(Student student) {
-        return linkedList.contains(student.getKlass());
+        return klasses.stream().anyMatch(klass->klass.isIn(student));
     }
 
     public String introduceWith(Student student) {
