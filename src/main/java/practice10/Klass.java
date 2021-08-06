@@ -5,6 +5,7 @@ import java.util.List;
 public class Klass {
     private final int number;
     private Student leader;
+    private List<Teacher> teachers;
 
 
     public int getNumber() {
@@ -33,8 +34,15 @@ public class Klass {
         return this.equals(student.getKlass());
     }
 
-    public void appendMember(Student member){
-        member.setKlass(this);
+    public void appendMember(Student member) {
+        if (member.getKlass().getNumber() == this.number) {
+            member.setKlass(this);
+        } if (teachers != null) {
+            teachers.stream().forEach(teacher -> teacher.notifyStudentJoined(member, this));
+        }
     }
-
+    public void addTeachers(Teacher teacher) {
+        teachers = new ArrayList<>();
+        teachers.add(teacher);
+    }
 }

@@ -5,15 +5,19 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Teacher extends Person{
+    private Klass klass;
     private LinkedList<Klass> klasses;
 
     public Teacher(int id, String name, int age, LinkedList<Klass> klasses) {
         super(id, name, age);
         this.klasses = klasses;
+        klasses.forEach(klass1 -> klass1.addTeachers(this));
+
     }
 
     public Teacher(int id, String name, int age) {
         super(id, name, age);
+        klass.addTeachers(this);
     }
 
 
@@ -43,5 +47,9 @@ public class Teacher extends Person{
         } else {
             return "My name is " + getName() + ". I am " + getAge() + " years old. I am a Teacher. I don't teach " + student.getName() + ".";
         }
+    }
+
+    public void notifyStudentJoined(Student student, Klass klass){
+        System.out.print("I am "+getName()+". I know "+student.getName()+" has joined "+klass.getDisplayName()+ ".\n");
     }
 }
