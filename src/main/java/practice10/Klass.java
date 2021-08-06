@@ -22,7 +22,10 @@ public class Klass {
     public void assignLeader(Student leader){
         if (leader.getKlass().getNumber() == this.number) {
             this.leader = leader;
-        } else {
+        }
+        if (teachers != null) {
+            teachers.stream().forEach(teacher -> teacher.notifyAssignedLeader(leader, this));
+        }else {
             System.out.print("It is not one of us.\n");
         }
     }

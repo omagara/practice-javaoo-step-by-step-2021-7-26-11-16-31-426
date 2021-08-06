@@ -52,4 +52,8 @@ public class Teacher extends Person{
     public void notifyStudentJoined(Student student, Klass klass){
         System.out.print("I am "+getName()+". I know "+student.getName()+" has joined "+klass.getDisplayName()+ ".\n");
     }
+
+    public void notifyAssignedLeader(Student student, Klass klass){
+        System.out.print("I am "+getName()+". I know "+student.getName()+" become Leader of "+klass.getDisplayName()+ ".\n");
+    }
 }
