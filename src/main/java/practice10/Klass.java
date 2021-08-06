@@ -29,6 +29,10 @@ public class Klass {
         return leader;
     }
 
+    public boolean isIn(Student student) {
+        return this.equals(student.getKlass());
+    }
+
     public void appendMember(Student member){
         member.setKlass(this);
     }
