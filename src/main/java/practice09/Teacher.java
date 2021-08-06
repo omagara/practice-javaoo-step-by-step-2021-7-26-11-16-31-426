@@ -19,7 +19,7 @@ public class Teacher extends Person {
     }
 
     public LinkedList<Klass> getClasses() {
-        return this.klasses = klasses;
+        return klasses;
     }
 
     public String introduce() {
@@ -36,7 +36,7 @@ public class Teacher extends Person {
     }
 
     public boolean isTeaching(Student student) {
-        return klasses.stream().anyMatch(klass->klass.isIn(student));
+        return klasses.stream().anyMatch(klass -> klass.isIn(student));
     }
 
     public String introduceWith(Student student) {

@@ -5,7 +5,7 @@ import java.util.List;
 public class Klass {
     private final int number;
     private Student leader;
-    private List<Student> members = new ArrayList<>();
+
 
     public int getNumber() {
         return number;
@@ -19,14 +19,18 @@ public class Klass {
         return "Class " + number;
     }
     public void assignLeader(Student leader){
-        if (members.contains(leader)){
-            this.leader=leader;
-        }else {
+        if (leader.getKlass().getNumber() == this.number) {
+            this.leader = leader;
+        } else {
             System.out.print("It is not one of us.\n");
         }
     }
     public Student getLeader() {
         return leader;
+    }
+
+    public void appendMember(Student member){
+        member.setKlass(this);
     }
 
 }
