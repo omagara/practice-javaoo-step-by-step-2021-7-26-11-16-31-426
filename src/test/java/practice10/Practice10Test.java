@@ -71,7 +71,7 @@ public class Practice10Test {
 //        klass.assignLeader(jerry);
 //        assertThat(klass.getLeader()).isEqualTo(jerry);
 //    }
-//
+
 //    @Test
 //    public void should_student_have_name_age_and_class_number() throws Exception {
 //        Student tom = new Student(1, "Tom", 21, klass);

@@ -6,18 +6,16 @@ import java.util.List;
 import java.util.Objects;
 
 public class Klass {
-    private int number;
+    private final int number;
     private Student leader;
-    private String displayName;
-    private List<Student> members = new ArrayList<>();
+
 
     public Klass(int number) {
         this.number = number;
     }
 
     public String getDisplayName() {
-        displayName = "Class " + number;
-        return displayName;
+        return "Class " + number;
     }
 
     public int getNumber() {
@@ -25,7 +23,7 @@ public class Klass {
     }
 
     public void assignLeader(Student leader){
-        if (members.contains(leader)){
+        if (leader.getKlass().getNumber() == this.number){
             this.leader=leader;
         }else {
             System.out.print("It is not one of us.\n");
@@ -36,8 +34,8 @@ public class Klass {
     }
 
 
-    public void appendMember(Student student){
-        members.add(student);
+    public void appendMember(Student member){
+        member.setKlass(this);
     }
 
     public boolean isIn(Student student){
