@@ -12,18 +12,26 @@ public class Teacher extends Person{
         this.klasses = klasses;
     }
 
+    public Teacher(int id, String name, int age) {
+        super(id, name, age);
+    }
+
 
     public LinkedList<Klass> getClasses() {
         return klasses;
     }
 
     public String introduce(){
-        List<String> classes = new ArrayList<>();
-        for (Klass cList : klasses) {
-            classes.add(String.valueOf(cList.getNumber()));
+        if (klasses != null) {
+            List<String> classes = new ArrayList<>();
+            for (Klass cList : klasses) {
+                classes.add(String.valueOf(cList.getNumber()));
+            }
+            String classList = String.join(", ", classes);
+            return "My name is " + getName() + ". I am " + getAge() + " years old. I am a Teacher. I teach Class " + classList + ".";
+        } else {
+            return "My name is " + getName() + ". I am " + getAge() + " years old. I am a Teacher. I teach No Class.";
         }
-        String classList = String.join(", ", classes);
-        return "My name is " + getName() + ". I am " + getAge() + " years old. I am a Teacher. I teach Class " + classList + ".";
     }
 
 }
