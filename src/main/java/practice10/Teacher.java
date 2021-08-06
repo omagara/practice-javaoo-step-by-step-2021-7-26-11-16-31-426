@@ -37,4 +37,7 @@ public class Teacher extends Person{
         return klasses.stream().anyMatch(klass -> klass.isIn(student));
     }
 
+    public String introduceWith(Student student) {
+        return "My name is " + getName() + ". I am " + getAge() + " years old. I am a Teacher. I teach " + student.getName() + ".";
+    }
 }
