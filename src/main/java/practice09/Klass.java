@@ -3,6 +3,7 @@ package practice09;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Klass {
     private int number;
@@ -13,6 +14,7 @@ public class Klass {
     public Klass(int number) {
         this.number = number;
     }
+
     public String getDisplayName() {
         displayName = "Class " + number;
         return displayName;
@@ -21,6 +23,7 @@ public class Klass {
     public int getNumber() {
         return number;
     }
+
     public void assignLeader(Student leader){
         if (members.contains(leader)){
             this.leader=leader;
@@ -32,18 +35,25 @@ public class Klass {
         return leader;
     }
 
-    @Override
-    public String toString() {
-        return "Klass{" +
-                "number=" + number +
-                ", leader=" + leader +
-                ", displayName='" + displayName + '\'' +
-                ", members=" + members +
-                '}';
-    }
 
     public void appendMember(Student student){
         members.add(student);
     }
 
+    public boolean isIn(Student student){
+        return this.equals(student.getKlass());
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Klass klass = (Klass) o;
+        return number == klass.number;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(number);
+    }
 }
