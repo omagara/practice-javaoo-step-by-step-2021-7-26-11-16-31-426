@@ -31,9 +31,9 @@ public class Teacher extends Person{
                 classes.add(String.valueOf(cList.getNumber()));
             }
             String classList = String.join(", ", classes);
-            return "My name is " + getName() + ". I am " + getAge() + " years old. I am a Teacher. I teach Class " + classList + ".";
+            return super.introduce()+" I am a Teacher. I teach Class " + classList + ".";
         } else {
-            return "My name is " + getName() + ". I am " + getAge() + " years old. I am a Teacher. I teach No Class.";
+            return super.introduce()+" I am a Teacher. I teach No Class.";
         }
     }
     public boolean isTeaching(Student student) {
@@ -42,9 +42,9 @@ public class Teacher extends Person{
 
     public String introduceWith(Student student) {
         if (isTeaching(student)) {
-            return "My name is " + getName() + ". I am " + getAge() + " years old. I am a Teacher. I teach " + student.getName() + ".";
+            return super.introduce()+" I am a Teacher. I teach " + student.getName() + ".";
         } else {
-            return "My name is " + getName() + ". I am " + getAge() + " years old. I am a Teacher. I don't teach " + student.getName() + ".";
+            return super.introduce()+" I am a Teacher. I don't teach " + student.getName() + ".";
         }
     }
 
