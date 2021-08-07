@@ -1,6 +1,7 @@
 package practice10;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Klass {
     private final int number;
@@ -38,12 +39,25 @@ public class Klass {
     }
 
     public void appendMember(Student member) {
-        if (member.getKlass().getNumber() == this.number) {
-            member.setKlass(this);
-        } if (teachers != null) {
+        member.setKlass(this);
+         if (teachers != null) {
             teachers.stream().forEach(teacher -> teacher.notifyStudentJoined(member, this));
         }
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Klass klass = (Klass) o;
+        return number == klass.number;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(number);
+    }
+
     public void addTeachers(Teacher teacher) {
         teachers = new ArrayList<>();
         teachers.add(teacher);
