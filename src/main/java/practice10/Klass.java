@@ -1,4 +1,5 @@
 package practice10;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -20,16 +21,18 @@ public class Klass {
     public String getDisplayName() {
         return "Class " + number;
     }
-    public void assignLeader(Student leader){
+
+    public void assignLeader(Student leader) {
         if (leader.getKlass().getNumber() == this.number) {
             this.leader = leader;
         }
         if (teachers != null) {
             teachers.stream().forEach(teacher -> teacher.notifyAssignedLeader(leader, this));
-        }else {
+        } else {
             System.out.print("It is not one of us.\n");
         }
     }
+
     public Student getLeader() {
         return leader;
     }
@@ -40,7 +43,7 @@ public class Klass {
 
     public void appendMember(Student member) {
         member.setKlass(this);
-         if (teachers != null) {
+        if (teachers != null) {
             teachers.stream().forEach(teacher -> teacher.notifyStudentJoined(member, this));
         }
     }

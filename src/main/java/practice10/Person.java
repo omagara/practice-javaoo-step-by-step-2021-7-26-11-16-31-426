@@ -34,7 +34,7 @@ public class Person {
         return Objects.hash(id);
     }
 
-    public String introduce(){
-        return "My name is " + name +". I am " + age + " years old.";
+    public String introduce() {
+        return "My name is " + name + ". I am " + age + " years old.";
     }
 }
